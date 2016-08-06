@@ -14,7 +14,6 @@
 
 using System;
 using System.Collections.Generic;
-using Uol.PagSeguro.Util;
 
 namespace Uol.PagSeguro.Domain
 {
@@ -54,6 +53,15 @@ namespace Uol.PagSeguro.Domain
         }
 
         /// <summary>
+        /// Sender Address
+        /// </summary>
+        public Address Address
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Sender hash code
         /// </summary>
         public String Hash
@@ -67,13 +75,13 @@ namespace Uol.PagSeguro.Domain
         /// </summary>
         public IList<SenderDocument> Documents
         {
-            get 
-            { 
-                if(this._documents == null)
+            get
+            {
+                if (this._documents == null)
                 {
                     this._documents = new List<SenderDocument>();
                 }
-                return this._documents;  
+                return this._documents;
             }
             set { this._documents = value; }
         }
@@ -96,9 +104,9 @@ namespace Uol.PagSeguro.Domain
             this.Name = name;
             this.Email = email;
             this.Phone = new Phone(areaCode, number);
-            this.Documents.Add(new SenderDocument(type,value));
+            this.Documents.Add(new SenderDocument(type, value));
         }
-        
+
         /// <summary>
         /// Initializes a new instance of the Sender class
         /// </summary>
@@ -116,7 +124,7 @@ namespace Uol.PagSeguro.Domain
         /// Gets toString class
         /// </summary>
         /// <returns>string</returns>
-        public override string  ToString()
+        public override string ToString()
         {
             return "Sender [name=" + Name + ", email=" + Email + ", phone=" + Phone
                     + ", documents=" + Documents + "]";
