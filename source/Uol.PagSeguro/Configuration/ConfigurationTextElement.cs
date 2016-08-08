@@ -3,7 +3,7 @@ using System.Xml;
 
 namespace Uol.PagSeguro.Configuration
 {
-    public class ConfigurationTextElement<T> : PagSeguroConfigurationElement
+    public class ConfigurationTextElement<T> : ConfigurationElement
     {
         private T _value;
         protected override void DeserializeElement(XmlReader reader,

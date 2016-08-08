@@ -8,6 +8,11 @@ namespace Uol.PagSeguro.Configuration
         public const string CredentialKey = "Credential";
         public const string ConfigurationKey = "Configuration";
 
+        //public static PagSeguroConfigurationSection GetConfiguration()
+        //{
+        //    return (PagSeguroConfigurationSection)ConfigurationManager.GetSection("PagSeguro") ?? new PagSeguroConfigurationSection();
+        //}
+
         [ConfigurationProperty(UrlsKey, IsRequired = true)]
         public UrlsElement Urls
         {

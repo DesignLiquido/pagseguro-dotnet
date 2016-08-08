@@ -8,7 +8,7 @@ namespace Uol.PagSeguro.Configuration
         public const string TokenKey = "Token";
         public const string SandboxEmailKey = "SandboxEmail";
         public const string SandboxTokenKey = "SandboxToken";
-        public const string AppIdKey = "AppIdKey";
+        public const string AppIdKey = "AppId";
         public const string AppKeyKey = "AppKey";
         public const string SandboxAppIdKey = "SandboxAppId";
         public const string SandboxAppKeyKey = "SandboxAppKey";

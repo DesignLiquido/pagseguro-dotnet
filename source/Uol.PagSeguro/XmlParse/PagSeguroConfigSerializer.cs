@@ -13,6 +13,7 @@
 //   limitation
 
 using System;
+using System.Configuration;
 using System.Xml;
 using Uol.PagSeguro.Domain;
 
@@ -103,20 +104,24 @@ namespace Uol.PagSeguro.XmlParse
         /// <returns></returns>
         internal static AccountCredentials GetAccountCredentials(XmlDocument xml, bool sandbox)
         {
-
             AccountCredentials credential = null;
 
             string email;
             string token;
+            var configuration = ConfigurationManager.GetSection("PagSeguro");
 
             if (sandbox)
             {
                 email = GetDataConfiguration(xml, PagSeguroConfigSerializer.SandboxEmail);
                 token = GetDataConfiguration(xml, PagSeguroConfigSerializer.SandboxToken);
+                //email = configuration.Credential.SandboxEmail.ToString();
+                //token = configuration.Credential.SandboxToken.ToString();
             }
             else {
                 email = GetDataConfiguration(xml, PagSeguroConfigSerializer.Email);
                 token = GetDataConfiguration(xml, PagSeguroConfigSerializer.Token);
+                //email = configuration.Credential.Email.ToString();
+                //token = configuration.Credential.Token.ToString();
             }
 
             try
@@ -128,6 +133,7 @@ namespace Uol.PagSeguro.XmlParse
                 throw new ArgumentException("To use credentials from config.properties file you must "
                 + "configure the properties credential email and credential token.");
             }
+
             return credential;
         }
 

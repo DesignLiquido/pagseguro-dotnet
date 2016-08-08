@@ -26,7 +26,6 @@ namespace CreateAuthorization
     {
         static void Main(string[] args)
         {
-
             bool isSandbox = false;
             EnvironmentConfiguration.ChangeEnvironment(isSandbox);
 

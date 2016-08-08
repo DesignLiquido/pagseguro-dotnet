@@ -14,8 +14,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net;
-using Uol.PagSeguro;
 using Uol.PagSeguro.Constants;
 using Uol.PagSeguro.Domain;
 using Uol.PagSeguro.Exception;
@@ -27,11 +25,10 @@ namespace CreatePayment
     {
         static void Main(string[] args)
         {
-
             //Use global configuration
             //PagSeguroConfiguration.UrlXmlConfiguration = "../../../../../Configuration/PagSeguroConfig.xml";
 
-            bool isSandbox = false;
+            bool isSandbox = true;
             EnvironmentConfiguration.ChangeEnvironment(isSandbox);
 
             // Instantiate a new payment request
@@ -42,7 +39,6 @@ namespace CreatePayment
 
             // Add an item for this payment request
             payment.Items.Add(new Item("0001", "Notebook Prata", 1, 2430.00m));
-
 
             // Add another item for this payment request
             payment.Items.Add(new Item("0002", "Notebook Rosa", 2, 150.99m));

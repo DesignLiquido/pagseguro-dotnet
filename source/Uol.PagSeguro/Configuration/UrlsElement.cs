@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace Uol.PagSeguro.Configuration
 {
-    public class UrlsElement : PagSeguroConfigurationElement
+    public class UrlsElement : ConfigurationElement
     {
         public const string PaymentKey = "Payment";
         public const string PaymentRedirectKey = "PaymentRedirect";

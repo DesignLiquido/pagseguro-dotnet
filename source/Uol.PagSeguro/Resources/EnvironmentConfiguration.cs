@@ -31,7 +31,6 @@ namespace Uol.PagSeguro.Resources
         /// </summary>
         public static void ChangeEnvironment(bool sandbox)
         {
-
             string urlXmlConfiguration = PagSeguroConfiguration.UrlXmlConfiguration;
 
             XmlDocument xml = new XmlDocument();
@@ -45,7 +44,6 @@ namespace Uol.PagSeguro.Resources
                 {
                     for (int i = 0; i < elemList.Count; i++)
                     {
-
                         Match match = Regex.Match(elemList[i].InnerText, sandboxUrl);
 
                         if (!match.Success)

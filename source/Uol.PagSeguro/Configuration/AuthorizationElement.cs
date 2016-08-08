@@ -2,7 +2,7 @@
 
 namespace Uol.PagSeguro.Configuration
 {
-    public class AuthorizationElement : PagSeguroConfigurationElement
+    public class AuthorizationElement : ConfigurationElement
     {
         public const string AuthorizationRequestKey = "AuthorizationRequest";
         public const string AuthorizationURLKey = "AuthorizationURL";
