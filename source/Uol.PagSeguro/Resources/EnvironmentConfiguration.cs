@@ -14,13 +14,7 @@
 
 using System;
 using System.Xml;
-using Uol.PagSeguro.Domain;
-using Uol.PagSeguro.XmlParse;
-using System.Reflection;
-using System.Diagnostics;
-using System.Web;
 using System.Text.RegularExpressions;
-using Uol.PagSeguro.Exception;
 
 namespace Uol.PagSeguro.Resources
 {

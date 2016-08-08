@@ -52,11 +52,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>PagSeguro.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,6 +67,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\AuthorizationElement.cs" />
+    <Compile Include="Configuration\PagSeguroConfigurationElement.cs" />
+    <Compile Include="Configuration\ConfigurationTextElement.cs" />
+    <Compile Include="Configuration\CredentialElement.cs" />
+    <Compile Include="Configuration\DirectPaymentElement.cs" />
+    <Compile Include="Configuration\TextElement.cs" />
+    <Compile Include="Configuration\PagSeguroConfigurationSection.cs" />
+    <Compile Include="Configuration\PreApprovalElement.cs" />
+    <Compile Include="Configuration\UrlElement.cs" />
+    <Compile Include="Configuration\UrlsElement.cs" />
     <Compile Include="Constants\AcceptedPaymentGroups.cs" />
     <Compile Include="Constants\AcceptedPaymentNames.cs" />
     <Compile Include="Constants\PaymentMethodConfigKeys.cs" />
@@ -198,6 +207,7 @@
     <Compile Include="XmlParse\XMLParserUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PagSeguro.pfx" />
     <None Include="Uol.PagSeguro.FxCop" />
   </ItemGroup>
   <ItemGroup>
