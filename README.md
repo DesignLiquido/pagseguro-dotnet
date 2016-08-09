@@ -4,6 +4,20 @@ Biblioteca de integração PagSeguro em .NET
 Descrição
 ---------
 ---
+
+Este é um *fork* da biblioteca original e corresponde ao [pacote NuGet](https://www.nuget.org/packages/Uol.PagSeguro/) publicado. Esta versão é a 2.6.0.0. 
+
+Precisei fazer este *fork* porque, aparentemente, a UOL perdeu o interesse de atualizar sua biblioteca, mesmo com o apelo de vários e vários usuários pedindo modificações e mandando *pull requests* que não são atendidos. Também custo a compreender como canais como *Issues* e *Wiki* não são mantidos, sendo eles de enorme importância para o desenvolvimento e uso da biblioteca. 
+
+Resisti um bom tempo antes de colocar a mão na massa, até que apareceu um sistema que tive que fazer que utiliza a biblioteca, e não posso usar uma configuração XML em separado do arquivo de configuração da aplicação (até porque esse tipo de *design* não faz muito sentido). Ainda assim, mantive o suporte retroativo a este arquivo, mesmo não concordando com ele. 
+
+Se a UOL tiver interese em reassumir o desenvolvimento, posso fazer um *pull request* sem problemas. Por ora, o desenvolvimento da biblioteca ficará por aqui.
+
+==========================================
+---
+Descrição
+---------
+---
 A biblioteca PagSeguro em .NET é um conjunto de classes de domínio que facilitam, para o desenvolvedor .NET, a utilização das funcionalidades que o PagSeguro oferece na forma de APIs. Com a biblioteca instalada e configurada, você pode facilmente integrar funcionalidades como:
 
 
@@ -26,18 +40,141 @@ Requisitos
 Instalação
 ----------
 ---
+
+## NuGet
+
+[instale o pacote mais recente](https://www.nuget.org/packages/Uol.PagSeguro/) usando o seguinte comando:
+
+    > Install-Package Uol.PagSeguro
+    
+
+## Fontes
+
  - Baixe o repositório como arquivo zip ou faça um clone;
  - Descompacte os arquivos em seu computador;
  - Dentro do diretório *source* existem dois diretórios, o *Uol.PagSeguro* e o *Examples*. O diretório *Examples* contém exemplos de chamadas utilizando a API e o diretório *Uol.PagSeguro* contém a biblioteca propriamente dita;
- - Inclua o projeto Uol.PagSeguro.csproj dentro de sua solução;
- - Adicione uma referência ao projeto Uol.PagSeguro.csproj em seu projeto.
+ - Inclua o projeto `Uol.PagSeguro.csproj` dentro de sua solução;
+ - Adicione uma referência ao projeto `Uol.PagSeguro.csproj` em seu projeto.
 
 Configuração
 ------------
 ---
 Visando garantir a segurança dos seus dados no PagSeguro, é necessário que você informe suas credenciais de acesso ao executar funções da biblioteca que realizam chamadas via API. As credenciais de acesso são formadas pelo e-mail de cadastro no PagSeguro e um token, que funciona como uma senha.
 
-As chamadas via API exigem que você passe uma instância da classe AccountCredentials que é responsável por encapsular suas credenciais.
+As chamadas via API exigem que você passe uma instância da classe `AccountCredentials` que é responsável por encapsular suas credenciais.
+
+## Configuração usando *config sections*
+
+Este é um exemplo de `App.config` (que pode ser `Web.config` também, tanto faz). Apenas pegamos o XML original e colocamos em formato de :
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.6.0.0, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
+  </configSections>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
+  </startup>
+  <PagSeguro>
+    <Urls>
+      <Payment>
+        <Link>https://ws.pagseguro.uol.com.br/v2/checkout</Link>
+      </Payment>
+      <PaymentRedirect>
+        <Link>https://pagseguro.uol.com.br/v2/checkout/payment.html</Link>
+      </PaymentRedirect>
+      <Notification>
+        <Link>https://ws.pagseguro.uol.com.br/v3/transactions/notifications</Link>
+      </Notification>
+      <Search>
+        <Link>https://ws.pagseguro.uol.com.br/v3/transactions</Link>
+      </Search>
+      <SearchAbandoned>
+        <Link>https://ws.pagseguro.uol.com.br/v2/transactions</Link>
+      </SearchAbandoned>
+      <Cancel>
+        <Link>https://ws.pagseguro.uol.com.br/v2/transactions/cancels</Link>
+      </Cancel>
+      <Refund>
+        <Link>https://ws.pagseguro.uol.com.br/v2/transactions/refunds</Link>
+      </Refund>
+      <PreApproval>
+        <Link>https://ws.pagseguro.uol.com.br/v2/pre-approvals/request</Link>
+        <PreApprovalRequest>
+          <Link>https://ws.pagseguro.uol.com.br/v2/pre-approvals/request</Link>
+        </PreApprovalRequest>
+        <PreApprovalRedirect>
+          <Link>https://pagseguro.uol.com.br/v2/pre-approvals/request.html</Link>
+        </PreApprovalRedirect>
+        <PreApprovalNotification>
+          <Link>https://ws.pagseguro.uol.com.br/v2/pre-approvals/notifications</Link>
+        </PreApprovalNotification>
+        <PreApprovalSearch>
+          <Link>https://ws.pagseguro.uol.com.br/v2/pre-approvals</Link>
+        </PreApprovalSearch>
+        <PreApprovalCancel>
+          <Link>https://ws.pagseguro.uol.com.br/v2/pre-approvals/cancel</Link>
+        </PreApprovalCancel>
+        <PreApprovalPayment>
+          <Link>https://ws.pagseguro.uol.com.br/v2/pre-approvals/payment</Link>
+        </PreApprovalPayment>
+      </PreApproval>
+      <DirectPayment>
+        <Session>
+          <Link>https://ws.pagseguro.uol.com.br/v2/sessions</Link>
+        </Session>
+        <Installment>
+          <Link>https://ws.pagseguro.uol.com.br/v2/installments</Link>
+        </Installment>
+        <Transactions>
+          <Link>https://ws.pagseguro.uol.com.br/v2/transactions</Link>
+        </Transactions>
+      </DirectPayment>
+      <Authorization>
+        <AuthorizationRequest>
+          <Link>https://ws.pagseguro.uol.com.br/v2/authorizations/request</Link>
+        </AuthorizationRequest>
+        <AuthorizationURL>
+          <Link>https://pagseguro.uol.com.br/v2/authorization/request.jhtml</Link>
+        </AuthorizationURL>
+        <AuthorizationSearch>
+          <Link>https://ws.pagseguro.uol.com.br/v2/authorizations/</Link>
+        </AuthorizationSearch>
+        <AuthorizationNotification>
+          <Link>https://ws.pagseguro.uol.com.br/v2/authorizations/notifications/</Link>
+        </AuthorizationNotification>
+      </Authorization>
+    </Urls>
+    <Credential>
+      <Email>backoffice@lojamodelo.com.br</Email>
+      <Token>256422BF9E66458CA3FE41189AD1C94A</Token>
+      <SandboxEmail>backoffice@lojamodelo.com.br</SandboxEmail>
+      <SandboxToken>256422BF9E66458CA3FE41189AD1C94A</SandboxToken>
+      <AppId>app8888888888</AppId>
+      <AppKey>82EBFA59F1F1469FF47B3FBB8D2526BC</AppKey>
+      <SandboxAppId>app8888888888</SandboxAppId>
+      <SandboxAppKey>82EBFA59F1F1469FF47B3FBB8D2526BC</SandboxAppKey>
+    </Credential>
+    <Configuration>
+      <LibVersion>2.6.0</LibVersion> 
+      <FormUrlEncoded>application/x-www-form-urlencoded</FormUrlEncoded>
+      <Encoding>ISO-8859-1</Encoding>
+      <RequestTimeout>10000</RequestTimeout>
+    </Configuration>
+  </PagSeguro>
+</configuration>
+```
+
+Ou seja, insira no seu `App.config` ou `Web.config`, como primeira tag após `<configuration>`, o seguinte:
+
+```
+  <configSections>
+    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.6.0.0, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
+  </configSections>
+```
+
+É recomendado inserir a tag `<PagSeguro>` ao final do arquivo para evitar confusão, assim como no exemplo.
 
 Mais informações estão disponíveis na [documentação oficial].
 
@@ -45,12 +182,16 @@ Mais informações estão disponíveis na [documentação oficial].
 Dúvidas?
 ----------
 ---
-Caso tenha dúvidas ou precise de suporte, acesse nosso [fórum].
+Caso tenha dúvidas ou precise de suporte, acesse o [fórum do PagSeguro] ou abra uma *issue* aqui.
 
 
 Changelog
 ---------
 ---
+
+2.6.0.0
+
+- Adicionado suporte à configuração por *config sections*, mantendo suporte retroativo ao XML isolado.
 
 2.5.1
 
@@ -119,7 +260,7 @@ Changelog
 Licença
 -------
 ---
-Copyright 2013 PagSeguro Internet LTDA.
+Copyright 2013-2016 PagSeguro Internet LTDA.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
@@ -152,7 +293,7 @@ Achou e corrigiu um bug ou tem alguma feature em mente e deseja contribuir?
   [transações por código]: https://pagseguro.uol.com.br/v3/guia-de-integracao/consulta-de-transacoes-por-codigo.html
   [transações por intervalo de datas]: https://pagseguro.uol.com.br/v2/guia-de-integracao/consulta-de-transacoes-por-intervalo-de-datas.html
   [transações abandonadas]: https://pagseguro.uol.com.br/v2/guia-de-integracao/consulta-de-transacoes-abandonadas.html
-  [fórum]: http://forum.pagseguro.uol.com.br/
+  [fórum do PagSeguro]: http://forum.pagseguro.uol.com.br/
   [.NET Framework]: http://www.microsoft.com/net
-  [GitHub]: https://github.com/pagseguro/netframework
+  [GitHub]: https://github.com/DesignLiquido/pagseguro-dotnet
   [documentação oficial]: https://pagseguro.uol.com.br/v2/guia-de-integracao/documentacao-da-biblioteca-pagseguro-netframework.html
