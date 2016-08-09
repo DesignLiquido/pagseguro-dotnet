@@ -63,6 +63,7 @@ namespace Uol.PagSeguro.XmlParse
         internal const string FormUrlEncoded = "FormUrlEncoded";
         internal const string Encoding = "Encoding";
         internal const string RequestTimeout = "RequestTimeout";
+        internal const string Sandbox = "Sandbox";
 
         /// <summary>
         /// 

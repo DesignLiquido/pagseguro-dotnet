@@ -40,12 +40,19 @@ namespace Uol.PagSeguro.Resources
         /// <summary>
         /// 
         /// </summary>
-        public static AccountCredentials Credentials(bool sandbox)
+        public static AccountCredentials Credentials(bool? sandbox = null)
         {
-            if (configuration == null)
-                return PagSeguroConfigSerializer.GetAccountCredentials(LoadXmlConfig(), sandbox);
+            if (!sandbox.HasValue)
+                sandbox = Sandbox;
 
+            if (configuration == null)
+                return PagSeguroConfigSerializer.GetAccountCredentials(LoadXmlConfig(), sandbox.Value);
+
+            if (sandbox.Value)
             return new AccountCredentials(configuration.Credential.SandboxEmail.Value, configuration.Credential.SandboxToken.Value);
+
+            return new AccountCredentials(configuration.Credential.Email.Value, configuration.Credential.Token.Value);
+
         }
 
         /// <summary>
@@ -412,6 +419,20 @@ namespace Uol.PagSeguro.Resources
                     return Convert.ToInt32(GetDataConfiguration(PagSeguroConfigSerializer.RequestTimeout));
 
                 return Convert.ToInt32(configuration.Configuration.RequestTimeout.Value);
+            }
+        }
+
+        /// <summary>
+        /// Get Sandbox configuration
+        /// </summary>
+        public static bool Sandbox
+        {
+            get
+            {
+                if (configuration == null)
+                    return Convert.ToBoolean(GetDataConfiguration(PagSeguroConfigSerializer.Sandbox));
+
+                return Convert.ToBoolean(configuration.Configuration.Sandbox.Value);
             }
         }
 

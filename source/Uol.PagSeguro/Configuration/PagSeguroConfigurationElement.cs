@@ -8,6 +8,7 @@ namespace Uol.PagSeguro.Configuration
         public const string FormUrlEncodedKey = "FormUrlEncoded";
         public const string EncodingKey = "Encoding";
         public const string RequestTimeoutKey = "RequestTimeout";
+        public const string SandboxKey = "Sandbox";
 
         [ConfigurationProperty(LibVersionKey, IsRequired = true)]
         public TextElement LibVersion
@@ -35,6 +36,16 @@ namespace Uol.PagSeguro.Configuration
         {
             get { return (TextElement)this[RequestTimeoutKey]; }
             set { this[RequestTimeoutKey] = value; }
+        }
+
+        /// <summary>
+        /// Configure Sandbox TextElement
+        /// </summary>
+        [ConfigurationProperty(SandboxKey, IsRequired = true)]
+        public TextElement Sandbox
+        {
+            get { return (TextElement)this[SandboxKey]; }
+            set { this[SandboxKey] = value; }
         }
     }
 }

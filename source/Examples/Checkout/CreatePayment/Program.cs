@@ -26,7 +26,7 @@ namespace CreatePayment
         static void Main(string[] args)
         {
             //Use global configuration
-            //PagSeguroConfiguration.UrlXmlConfiguration = "../../../../../Configuration/PagSeguroConfig.xml";
+            PagSeguroConfiguration.UrlXmlConfiguration = "../../Configuration/PagSeguroConfig.xml";
 
             bool isSandbox = true;
             EnvironmentConfiguration.ChangeEnvironment(isSandbox);
