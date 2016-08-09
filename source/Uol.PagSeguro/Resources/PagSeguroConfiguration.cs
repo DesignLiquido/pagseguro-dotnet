@@ -51,6 +51,21 @@ namespace Uol.PagSeguro.Resources
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="sandbox"></param>
+        /// <returns></returns>
+        public static ApplicationCredentials ApplicationCredentials(bool sandbox)
+        {
+            if (configuration == null)
+                return PagSeguroConfigSerializer.GetApplicationCredentials(LoadXmlConfig(), sandbox);
+
+            return sandbox ?
+                new Domain.ApplicationCredentials(appId: configuration.Credential.SandboxAppId.ToString(), appKey: configuration.Credential.SandboxAppKey.ToString()) :
+                new Domain.ApplicationCredentials(appId: configuration.Credential.AppId.ToString(), appKey: configuration.Credential.AppKey.ToString());
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static string UrlXmlConfiguration
         {
             get
