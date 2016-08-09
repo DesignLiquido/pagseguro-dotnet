@@ -49,7 +49,7 @@ namespace Uol.PagSeguro.Resources
                 return PagSeguroConfigSerializer.GetAccountCredentials(LoadXmlConfig(), sandbox.Value);
 
             if (sandbox.Value)
-            return new AccountCredentials(configuration.Credential.SandboxEmail.Value, configuration.Credential.SandboxToken.Value);
+                return new AccountCredentials(configuration.Credential.SandboxEmail.Value, configuration.Credential.SandboxToken.Value);
 
             return new AccountCredentials(configuration.Credential.Email.Value, configuration.Credential.Token.Value);
 
@@ -486,7 +486,7 @@ namespace Uol.PagSeguro.Resources
         /// <param name="url"></param>
         /// <returns></returns>
         private static string GetUrlValue(string url)
-        {            
+        {
             return PagSeguroConfigSerializer.GetWebserviceUrl(LoadXmlConfig(), url);
         }
 
