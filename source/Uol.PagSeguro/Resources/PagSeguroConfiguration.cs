@@ -45,7 +45,7 @@ namespace Uol.PagSeguro.Resources
             if (configuration == null)
                 return PagSeguroConfigSerializer.GetAccountCredentials(LoadXmlConfig(), sandbox);
 
-            return new AccountCredentials(configuration.Credential.SandboxEmail.Value.ToString(), configuration.Credential.SandboxToken.Value.ToString());
+            return new AccountCredentials(configuration.Credential.SandboxEmail.Value, configuration.Credential.SandboxToken.Value);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.Notification));
 
-                return new Uri(configuration.Urls.Notification.ToString());
+                return new Uri(configuration.Urls.Notification.Link.Value);
             }
         }
 
@@ -130,7 +130,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.Payment));
 
-                return new Uri(configuration.Urls.Payment.ToString());
+                return new Uri(configuration.Urls.Payment.Link.Value);
             }
         }
 
@@ -144,7 +144,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.PaymentRedirect));
 
-                return new Uri(configuration.Urls.PaymentRedirect.ToString());
+                return new Uri(configuration.Urls.PaymentRedirect.Link.Value);
             }
         }
 
@@ -158,7 +158,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.Search));
 
-                return new Uri(configuration.Urls.Search.ToString());
+                return new Uri(configuration.Urls.Search.Link.Value);
             }
         }
 
@@ -172,7 +172,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.SearchAbandoned));
 
-                return new Uri(configuration.Urls.SearchAbandoned.ToString());
+                return new Uri(configuration.Urls.SearchAbandoned.Link.Value);
             }
         }
 
@@ -186,7 +186,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.Cancel));
 
-                return new Uri(configuration.Urls.Cancel.ToString());
+                return new Uri(configuration.Urls.Cancel.Link.Value);
             }
         }
 
@@ -200,7 +200,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.Refund));
 
-                return new Uri(configuration.Urls.Refund.ToString());
+                return new Uri(configuration.Urls.Refund.Link.Value);
             }
         }
 
@@ -214,7 +214,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApproval));
 
-                return new Uri(configuration.Urls.PreApproval.ToString());
+                return new Uri(configuration.Urls.PreApproval.Link.Value);
             }
         }
 
@@ -228,7 +228,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalRedirect));
 
-                return new Uri(configuration.Urls.PreApproval.PreApprovalRedirect.ToString());
+                return new Uri(configuration.Urls.PreApproval.PreApprovalRedirect.Link.Value);
             }
         }
 
@@ -242,7 +242,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalNotification));
 
-                return new Uri(configuration.Urls.PreApproval.PreApprovalNotification.ToString());
+                return new Uri(configuration.Urls.PreApproval.PreApprovalNotification.Link.Value);
             }
         }
 
@@ -256,7 +256,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalSearch));
 
-                return new Uri(configuration.Urls.PreApproval.PreApprovalSearch.ToString());
+                return new Uri(configuration.Urls.PreApproval.PreApprovalSearch.Link.Value);
             }
         }
 
@@ -270,7 +270,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalCancel));
 
-                return new Uri(configuration.Urls.PreApproval.PreApprovalCancel.ToString());
+                return new Uri(configuration.Urls.PreApproval.PreApprovalCancel.Link.Value);
             }
         }
 
@@ -284,7 +284,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalPayment));
 
-                return new Uri(configuration.Urls.PreApproval.PreApprovalPayment.ToString());
+                return new Uri(configuration.Urls.PreApproval.PreApprovalPayment.Link.Value);
             }
         }
 
@@ -298,7 +298,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.Session));
 
-                return new Uri(configuration.Urls.DirectPayment.Session.ToString());
+                return new Uri(configuration.Urls.DirectPayment.Session.Link.Value);
             }
         }
 
@@ -312,7 +312,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.Transactions));
 
-                return new Uri(configuration.Urls.DirectPayment.Transactions.ToString());
+                return new Uri(configuration.Urls.DirectPayment.Transactions.Link.Value);
             }
         }
 
@@ -326,7 +326,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.Installment));
 
-                return new Uri(configuration.Urls.DirectPayment.Installment.ToString());
+                return new Uri(configuration.Urls.DirectPayment.Installment.Link.Value);
             }
         }
 
@@ -340,7 +340,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.AuthorizationRequest));
 
-                return new Uri(configuration.Urls.Authorization.AuthorizationRequest.ToString());
+                return new Uri(configuration.Urls.Authorization.AuthorizationRequest.Link.Value);
             }
         }
 
@@ -354,7 +354,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.Authorization));
 
-                return new Uri(configuration.Urls.Authorization.AuthorizationURL.ToString());
+                return new Uri(configuration.Urls.Authorization.AuthorizationURL.Link.Value);
             }
         }
 
@@ -368,7 +368,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.AuthorizationSearch));
 
-                return new Uri(configuration.Urls.Authorization.AuthorizationSearch.ToString());
+                return new Uri(configuration.Urls.Authorization.AuthorizationSearch.Link.Value);
             }
         }
 
@@ -382,7 +382,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return new Uri(GetUrlValue(PagSeguroConfigSerializer.AuthorizationNotification));
 
-                return new Uri(configuration.Urls.Authorization.AuthorizationNotification.ToString());
+                return new Uri(configuration.Urls.Authorization.AuthorizationNotification.Link.Value);
             }
         }
 
@@ -396,7 +396,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return Convert.ToInt32(GetDataConfiguration(PagSeguroConfigSerializer.RequestTimeout));
 
-                return Convert.ToInt32(configuration.Configuration.RequestTimeout.ToString());
+                return Convert.ToInt32(configuration.Configuration.RequestTimeout.Value);
             }
         }
 
@@ -412,7 +412,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return GetDataConfiguration(PagSeguroConfigSerializer.FormUrlEncoded);
 
-                return configuration.Configuration.FormUrlEncoded.ToString();
+                return configuration.Configuration.FormUrlEncoded.Value;
             }
         }
 
@@ -426,7 +426,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return GetDataConfiguration(PagSeguroConfigSerializer.Encoding);
 
-                return configuration.Configuration.Encoding.ToString();
+                return configuration.Configuration.Encoding.Value;
             }
         }
 
@@ -440,7 +440,7 @@ namespace Uol.PagSeguro.Resources
                 if (configuration == null)
                     return GetDataConfiguration(PagSeguroConfigSerializer.LibVersion);
 
-                return configuration.Configuration.LibVersion.ToString();
+                return configuration.Configuration.LibVersion.Value;
             }
         }
 

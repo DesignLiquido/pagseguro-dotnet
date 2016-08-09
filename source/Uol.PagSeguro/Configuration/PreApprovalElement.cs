@@ -9,8 +9,8 @@ namespace Uol.PagSeguro.Configuration
         public const string PreApprovalRedirectKey = "PreApprovalRedirect";
         public const string PreApprovalNotificationKey = "PreApprovalNotification";
         public const string PreApprovalSearchKey = "PreApprovalSearch";
-        public const string PreApprovalCancelKey = "PreApprovalCancelKey";
-        public const string PreApprovalPaymentKey = "PreApprovalPaymentKey";
+        public const string PreApprovalCancelKey = "PreApprovalCancel";
+        public const string PreApprovalPaymentKey = "PreApprovalPayment";
 
         [ConfigurationProperty(LinkKey, IsRequired = true)]
         public TextElement Link
