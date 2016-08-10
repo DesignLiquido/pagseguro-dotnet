@@ -161,6 +161,7 @@ Este é um exemplo de `App.config` (que pode ser `Web.config` também, tanto faz
       <FormUrlEncoded>application/x-www-form-urlencoded</FormUrlEncoded>
       <Encoding>ISO-8859-1</Encoding>
       <RequestTimeout>10000</RequestTimeout>
+      <Sandbox>true</Sandbox>
     </Configuration>
   </PagSeguro>
 </configuration>
@@ -188,6 +189,10 @@ Caso tenha dúvidas ou precise de suporte, acesse o [fórum do PagSeguro] ou abr
 Changelog
 ---------
 ---
+
+2.6.0.1
+
+- Algumas correções de *bugs*; Inserção do parâmetro `<Sandbox>` em `<Configuration>` para permitir troca rápida entre *sandbox* e produção. 
 
 2.6.0.0
 
@@ -282,8 +287,8 @@ Contribuições
 Achou e corrigiu um bug ou tem alguma feature em mente e deseja contribuir?
 
 * Faça um fork.
-* Adicione sua feature ou correção de bug.
-* Envie um pull request no [GitHub].
+* Adicione sua *feature* ou correção de bug.
+* Envie um *pull request* no [GitHub].
 
   [requisições de assinaturas]: http://download.uol.com.br/pagseguro/docs/pagseguro-assinatura-automatica.pdf
   [assinaturas]: http://download.uol.com.br/pagseguro/docs/pagseguro-assinatura-automatica.pdf
