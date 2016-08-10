@@ -33,8 +33,8 @@ namespace Uol.PagSeguro.Configuration
         [ConfigurationProperty(NotificationKey, IsRequired = true)]
         public UrlElement Notification
         {
-            get { return (UrlElement)this[PaymentKey]; }
-            set { this[PaymentKey] = value; }
+            get { return (UrlElement)this[NotificationKey]; }
+            set { this[NotificationKey] = value; }
         }
 
         [ConfigurationProperty(SearchKey, IsRequired = true)]

@@ -15,6 +15,7 @@ namespace Uol.PagSeguro.Configuration
         public T Value
         {
             get { return _value; }
+            set { _value = value; }
         }
     }
 }

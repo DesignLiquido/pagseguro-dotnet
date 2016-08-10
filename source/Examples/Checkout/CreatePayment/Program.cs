@@ -28,8 +28,8 @@ namespace CreatePayment
             //Use global configuration
             PagSeguroConfiguration.UrlXmlConfiguration = "../../Configuration/PagSeguroConfig.xml";
 
-            bool isSandbox = true;
-            EnvironmentConfiguration.ChangeEnvironment(isSandbox);
+            //bool isSandbox = true;
+            //EnvironmentConfiguration.ChangeEnvironment(isSandbox);
 
             // Instantiate a new payment request
             PaymentRequest payment = new PaymentRequest();
@@ -110,7 +110,7 @@ namespace CreatePayment
 
             try
             {
-                AccountCredentials credentials = PagSeguroConfiguration.Credentials(isSandbox);
+                AccountCredentials credentials = PagSeguroConfiguration.Credentials();
 
                 Uri paymentRedirectUri = payment.Register(credentials);
 

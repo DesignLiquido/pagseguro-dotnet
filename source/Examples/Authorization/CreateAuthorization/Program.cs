@@ -26,10 +26,12 @@ namespace CreateAuthorization
     {
         static void Main(string[] args)
         {
-            bool isSandbox = false;
-            EnvironmentConfiguration.ChangeEnvironment(isSandbox);
+            //bool isSandbox = false;
+            //EnvironmentConfiguration.ChangeEnvironment(isSandbox);
 
             AuthorizationRequest authorization = new AuthorizationRequest();
+
+            
 
             authorization.Reference = "REF1234";
 
@@ -46,7 +48,7 @@ namespace CreateAuthorization
             try
             {
 
-                ApplicationCredentials credentials = PagSeguroConfiguration.ApplicationCredentials(isSandbox);
+                ApplicationCredentials credentials = PagSeguroConfiguration.ApplicationCredentials();
 
                 String result = authorization.Register(credentials);
 
