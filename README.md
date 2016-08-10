@@ -5,7 +5,7 @@ Descrição
 ---------
 ---
 
-Este é um *fork* da biblioteca original e corresponde ao [pacote NuGet](https://www.nuget.org/packages/Uol.PagSeguro/) publicado. Esta versão é a 2.6.0.0. 
+Este é um *fork* da biblioteca original e corresponde ao [pacote NuGet](https://www.nuget.org/packages/Uol.PagSeguro/) publicado. Esta versão é a 2.6.0.1. 
 
 Precisei fazer este *fork* porque, aparentemente, a UOL perdeu o interesse de atualizar sua biblioteca, mesmo com o apelo de vários e vários usuários pedindo modificações e mandando *pull requests* que não são atendidos. Também custo a compreender como canais como *Issues* e *Wiki* não são mantidos, sendo eles de enorme importância para o desenvolvimento e uso da biblioteca. 
 
