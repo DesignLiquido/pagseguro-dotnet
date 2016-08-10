@@ -71,7 +71,7 @@ Este é um exemplo de `App.config` (que pode ser `Web.config` também, tanto faz
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <configSections>
-    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.6.0.0, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
+    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.6.0.1, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
   </configSections>
   <startup>
     <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
@@ -171,7 +171,7 @@ Ou seja, insira no seu `App.config` ou `Web.config`, como primeira tag após `<c
 
 ```
   <configSections>
-    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.6.0.0, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
+    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.6.0.1, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
   </configSections>
 ```
 
