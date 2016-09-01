@@ -62,10 +62,10 @@ namespace Uol.PagSeguro.XmlParse
                             transaction.Reference = reader.ReadElementContentAsString();
                             break;
                         case SerializerHelper.TransactionType:
-                            transaction.TransactionType = reader.ReadElementContentAsInt();
+                            transaction.TransactionType = (Enums.TransactionType)reader.ReadElementContentAsInt();
                             break;
                         case SerializerHelper.TransactionStatus:
-                            transaction.TransactionStatus = reader.ReadElementContentAsInt();
+                            transaction.TransactionStatus = (Enums.TransactionStatus)reader.ReadElementContentAsInt();
                             break;
                         case SerializerHelper.PaymentLink:
                             transaction.PaymentLink = reader.ReadElementContentAsString();

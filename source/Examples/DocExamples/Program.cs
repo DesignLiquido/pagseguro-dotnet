@@ -144,7 +144,7 @@ namespace DocExamples
                 Transaction transaction =
                     NotificationService.CheckTransaction(credentials, notificationCode);
 
-                int status = transaction.TransactionStatus;
+                var status = transaction.TransactionStatus;
             }
         }
 
@@ -331,7 +331,7 @@ namespace DocExamples
                 // Código da transação  
                 string code = transaction.Code;
                 // Status da transação 
-                int status = transaction.TransactionStatus;
+                var status = transaction.TransactionStatus;
                 // Refência da transação 
                 string reference = transaction.Reference;
                 // Valor bruto da transação 
@@ -357,10 +357,10 @@ namespace DocExamples
             decimal grossAmount = transactionSummary.GrossAmount;
 
             // Tipo 
-            int type = transactionSummary.TransactionType;
+            var type = transactionSummary.TransactionType;
 
             // Status 
-            int status = transactionSummary.TransactionStatus;
+            var status = transactionSummary.TransactionStatus;
 
             // Valor líquido  
             decimal netAmount = transactionSummary.NetAmount;

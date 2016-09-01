@@ -125,6 +125,8 @@
     <Compile Include="Domain\PreApprovalSearchResult.cs" />
     <Compile Include="Domain\PreApprovalSummary.cs" />
     <Compile Include="Domain\PreApprovalTransaction.cs" />
+    <Compile Include="Enums\TransactionStatus.cs" />
+    <Compile Include="Enums\TransactionType.cs" />
     <Compile Include="Parse\PreApprovalParse.cs" />
     <Compile Include="Parse\PaymentParse.cs" />
     <Compile Include="Domain\CredentialsNameValuePair.cs" />

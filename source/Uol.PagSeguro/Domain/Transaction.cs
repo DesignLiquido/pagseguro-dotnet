@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Uol.PagSeguro.Enums;
 
 namespace Uol.PagSeguro.Domain
 {
@@ -63,7 +64,7 @@ namespace Uol.PagSeguro.Domain
         /// <summary>
         /// Transaction type
         /// </summary>
-        public int TransactionType
+        public TransactionType TransactionType
         {
             get;
             internal set;
@@ -72,7 +73,7 @@ namespace Uol.PagSeguro.Domain
         /// <summary>
         /// Transaction status
         /// </summary>
-        public int TransactionStatus
+        public TransactionStatus TransactionStatus
         {
             get;
             internal set;

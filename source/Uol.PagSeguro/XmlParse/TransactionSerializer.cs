@@ -13,8 +13,9 @@
 //   limitation
 
 using System.Xml;
-using Uol.PagSeguro.Constants;
+using Uol.PagSeguro.Enums;
 using Uol.PagSeguro.Domain;
+using Uol.PagSeguro.Constants;
 
 namespace Uol.PagSeguro.XmlParse
 {
@@ -64,10 +65,10 @@ namespace Uol.PagSeguro.XmlParse
                             transaction.Reference = reader.ReadElementContentAsString();
                             break;
                         case SerializerHelper.TransactionType:
-                            transaction.TransactionType = reader.ReadElementContentAsInt();
+                            transaction.TransactionType = (Enums.TransactionType)reader.ReadElementContentAsInt();
                             break;
                         case SerializerHelper.TransactionStatus:
-                            transaction.TransactionStatus = reader.ReadElementContentAsInt();
+                            transaction.TransactionStatus = (Enums.TransactionStatus)reader.ReadElementContentAsInt();
                             break;
                         case SerializerHelper.PaymentLink:
                             transaction.PaymentLink = reader.ReadElementContentAsString();
