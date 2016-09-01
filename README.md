@@ -5,7 +5,7 @@ Descrição
 ---------
 ---
 
-Este é um *fork* da biblioteca original e corresponde ao [pacote NuGet](https://www.nuget.org/packages/Uol.PagSeguro/) publicado. Esta versão é a 2.6.0.1. 
+Este é um *fork* da biblioteca original e corresponde ao [pacote NuGet](https://www.nuget.org/packages/Uol.PagSeguro/) publicado. Esta versão é a 2.7. 
 
 Precisei fazer este *fork* porque, aparentemente, a UOL perdeu o interesse de atualizar sua biblioteca, mesmo com o apelo de vários e vários usuários pedindo modificações e mandando *pull requests* que não são atendidos. Também custo a compreender como canais como *Issues* e *Wiki* não são mantidos, sendo eles de enorme importância para o desenvolvimento e uso da biblioteca. 
 
@@ -157,7 +157,7 @@ Este é um exemplo de `App.config` (que pode ser `Web.config` também, tanto faz
       <SandboxAppKey>82EBFA59F1F1469FF47B3FBB8D2526BC</SandboxAppKey>
     </Credential>
     <Configuration>
-      <LibVersion>2.6.0</LibVersion> 
+      <LibVersion>2.7</LibVersion> 
       <FormUrlEncoded>application/x-www-form-urlencoded</FormUrlEncoded>
       <Encoding>ISO-8859-1</Encoding>
       <RequestTimeout>10000</RequestTimeout>
@@ -171,7 +171,7 @@ Ou seja, insira no seu `App.config` ou `Web.config`, como primeira tag após `<c
 
 ```
   <configSections>
-    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.6.0.1, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
+    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.7, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
   </configSections>
 ```
 
@@ -189,6 +189,10 @@ Caso tenha dúvidas ou precise de suporte, acesse o [fórum do PagSeguro] ou abr
 Changelog
 ---------
 ---
+
+2.7
+
+- Adicionados Enums `TransactionType` e `TransactionStatus`, ao invés de uso de `int`s. Compatibilidade retroativa mantida.
 
 2.6.0.1
 
