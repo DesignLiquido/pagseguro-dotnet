@@ -65,13 +65,13 @@ As chamadas via API exigem que você passe uma instância da classe `AccountCred
 
 ## Configuração usando *config sections*
 
-Este é um exemplo de `App.config` (que pode ser `Web.config` também, tanto faz). Apenas pegamos o XML original e colocamos em formato de :
+Este é um exemplo de `App.config` (que pode ser `Web.config` também, tanto faz). Apenas pegamos o XML original e colocamos em formato de um arquivo estruturado de configuração:
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <configSections>
-    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.6.0.1, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
+    <section name="PagSeguro" type="Uol.PagSeguro.Configuration.PagSeguroConfigurationSection, Uol.PagSeguro, Version=2.7, Culture=neutral, PublicKeyToken=f3c2cf8865d9ba24" requirePermission="false" />
   </configSections>
   <startup>
     <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
