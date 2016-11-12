@@ -116,8 +116,8 @@ namespace Uol.PagSeguro.Resources
                 return PagSeguroConfigSerializer.GetApplicationCredentials(LoadXmlConfig(), sandbox.Value);
 
             return sandbox.Value ?
-                new Domain.ApplicationCredentials(appId: Configuration.Credential.SandboxAppId.ToString(), appKey: Configuration.Credential.SandboxAppKey.ToString()) :
-                new Domain.ApplicationCredentials(appId: Configuration.Credential.AppId.ToString(), appKey: Configuration.Credential.AppKey.ToString());
+                new Domain.ApplicationCredentials(appId: Configuration.Credential.SandboxAppId.Value.ToString(), appKey: Configuration.Credential.SandboxAppKey.Value.ToString()) :
+                new Domain.ApplicationCredentials(appId: Configuration.Credential.AppId.Value.ToString(), appKey: Configuration.Credential.AppKey.Value.ToString());
         }
 
         /// <summary>
