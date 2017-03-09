@@ -1,7 +1,7 @@
 Biblioteca de integração PagSeguro em .NET
 ==========================================
 ---
-Descrição
+Preâmbulo
 ---------
 ---
 
